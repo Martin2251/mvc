@@ -1,0 +1,27 @@
+<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80);">
+  <div class="container text-center">
+    <h1>Plantastic</h1>
+    <p>A place to rent plants</p>
+
+    <%= form_tag plants_path, method: :get do %>
+      <div class="input-group mb-3 mr-3">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a plant...",
+          aria: { label: "find", describedby: "basic-addon1" }
+        %>
+        <div class="input-group-prepend">
+          <span class="input-group-text p-0 pr-1 pl-1" id="basic-addon1">
+            <%= button_tag type: "submit", name: "", class: "search-icon" do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+
+    <br>
+    <p><%= link_to 'Click here for all plants', plants_path, class: "btn btn-green btn-lg" %></p>
+  </div>
+</div>
